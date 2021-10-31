@@ -31,7 +31,7 @@ export default {
   components: { ResultComponent, Toolbar },
   mounted() {
     axios
-    .post("http://localhost:8080/get-data", this.creds)
+    .post(`http://${window.location.hostname}:8080/get-data`, this.creds)
     .then((response) => {
       this.userData = response.data.data[0];
       this.currScore = response.data.data[0].score;

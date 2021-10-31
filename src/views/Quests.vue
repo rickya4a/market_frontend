@@ -73,7 +73,7 @@ export default {
           score: newScore
         }
 
-        axios.post("http://localhost:8080/update-point", postData)
+        axios.post(`http://${window.location.hostname}:8080/update-point`, postData)
         .then(res => console.log(res))
       }
 
@@ -103,14 +103,14 @@ export default {
     localStorage.removeItem('monster')
     localStorage.removeItem('monster-point')
     axios
-    .post("http://localhost:8080/get-data", this.creds)
+    .post(`http://${window.location.hostname}:8080/get-data`, this.creds)
     .then((response) => {
       this.items = response.data.data[0];
     })
     .catch((error) => console.log(error));
 
     axios
-    .get("http://localhost:8080/get-quests")
+    .get(`http://${window.location.hostname}:8080/get-quests`)
     .then((response) => {
       this.quests = response.data;
     })

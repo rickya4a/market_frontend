@@ -99,7 +99,7 @@ export default {
         password: this.password
       }
       axios
-      .post('http://localhost:8080/login', items)
+      .post(`http://${window.location.hostname}:8080/login`, items)
       .then((response) => {
         localStorage.clear()
         localStorage.setItem('email', response.data.data[0].email)

@@ -141,7 +141,7 @@ export default {
         password: this.password
       }
       axios
-      .post('http://localhost:8080/register', items)
+      .post(`http://${window.location.hostname}:8080/register`, items)
       .then(() => {
         this.$router.push('/')
       })
