@@ -54,13 +54,13 @@ export default {
   components: { Toolbar },
   mounted() {
     axios
-      .post("http://localhost:8080/get-data", this.creds)
+      .post(`http://${window.location.hostname}:8080/get-data`, this.creds)
       .then((response) => {
         this.items = response.data.data[0];
       })
       .catch((error) => console.log(error));
     axios
-      .get("http://localhost:8080/get-leaderboard")
+      .get(`http://${window.location.hostname}:8080/get-leaderboard`)
       .then((response) => {
         this.topPlayers = response.data;
       })
