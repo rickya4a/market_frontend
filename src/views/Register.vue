@@ -130,7 +130,6 @@ export default {
     },
     validate () {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
         this.submit()
       }
     },
